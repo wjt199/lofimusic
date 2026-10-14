@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout_land"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"> <!-- 全黑背景 -->
+
+    <!-- 中间轮播图片，保持比例居中显示 -->
+    <ImageView
+        android:id="@+id/image_view_slideshow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:contentDescription="@string/todo"
+        android:scaleType="centerInside"
+        android:src="@drawable/img_0" />
+
+    <!-- 右下角控制按钮容器，初始隐藏 -->
+    <LinearLayout
+        android:id="@+id/control_buttons_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="32dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- 音乐符号按钮：选择直播源 (使用系统列表图标) -->
+        <ImageView
+            android:id="@+id/btn_land_station"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/circle_bg"
+            android:clickable="true"
+            android:contentDescription="@string/todo"
+            android:focusable="true"
+            android:scaleType="centerInside"
+            android:src="@android:drawable/ic_menu_more" />
+
+        <!-- 播放/暂停按钮 (使用系统标准媒体图标) -->
+        <ImageView
+            android:id="@+id/btn_land_play_pause"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/circle_bg"
+            android:clickable="true"
+            android:contentDescription="@string/todo"
+            android:focusable="true"
+            android:scaleType="centerInside"
+            android:src="@android:drawable/ic_media_pause" />
+    </LinearLayout>
+
+</FrameLayout>

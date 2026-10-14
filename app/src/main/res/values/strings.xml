@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">LofiMusic</string>
+    <string name="lo_fi_music">😊 Lo-Fi Music 😀</string>
+    <string name="prev">Prev.</string>
+    <string name="pause">PAUSE</string>
+    <string name="next">Next</string>
+    <string name="quit">QUIT NOW</string>
+    <string name="todo">TODO</string>
+    <string name="quit_after">Time To Quit 😴...</string>
+    <string name="_15min">15min</string>
+    <string name="_30min">30min</string>
+    <string name="_45min">45min</string>
+    <string name="_60min">60min</string>
+    <string name="lunarText">XXXTen action</string>
+    <string name="date">xxxx年xx月xx日 星期x</string>
+    <string name="time">00:00:00</string>
+    <string name="quit_time_unset">Quit After ... </string>
+</resources>

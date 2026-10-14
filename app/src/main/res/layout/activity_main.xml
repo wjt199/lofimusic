@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66B16A"
+    android:fitsSystemWindows="true"
+    android:gravity="center|top"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:text="@string/lo_fi_music"
+        android:textColor="#1B5E20"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <!-- 【新增】：日期、星期和农历区域 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- 公历日期和星期 -->
+        <TextView
+            android:id="@+id/tv_date_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textColor="#424242"
+            android:textSize="24sp" />
+
+        <!-- 农历日期 -->
+        <TextView
+            android:id="@+id/tv_lunar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lunarText"
+            android:textColor="#1B5E20"
+            android:textSize="19sp" /> <!-- 颜色稍微淡一点，突出层次感 -->
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:text="@string/time"
+        android:textSize="52sp"
+        android:textStyle="bold" /> <!-- 使用等宽字体，防止数字跳动时界面抖动 -->
+
+    <Spinner
+        android:id="@+id/spinner_stations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:background="#AD5D16"
+        android:gravity="center"
+        android:minHeight="24dp"
+        android:padding="0dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/image_view_slideshow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="#6F6E6E"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitXY"
+        android:src="@drawable/img_0" />
+
+    <!-- 控制按钮组 -->
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_prev"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:backgroundTint="#DCA468"
+            android:text="@string/prev"
+            android:textColor="#4527A0"
+            android:textSize="16sp"
+            tools:ignore="VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/btn_play_pause"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:backgroundTint="#BE50D0"
+            android:text="@string/pause"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            tools:ignore="VisualLintButtonSize" />
+
+        <Button
+            android:id="@+id/btn_next"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:backgroundTint="#DCA468"
+            android:text="@string/next"
+            android:textColor="#4527A0"
+            android:textSize="16sp"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+
+
+    <!-- 【新增】：定时关闭区域 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="start|center"
+        android:orientation="vertical"
+        tools:ignore="VisualLintBounds">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="2dp"
+            android:gravity="center"
+            android:text="@string/quit_after"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            tools:ignore="TextSizeCheck,VisualLintBounds" />
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="VisualLintBounds">
+
+            <Button
+                android:id="@+id/btn_15min"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="@string/_15min"
+                android:textColor="#4A148C"
+                tools:ignore="NestedWeights,VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/btn_30min"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="@string/_30min"
+                android:textColor="#4A148C" />
+
+            <Button
+                android:id="@+id/btn_45min"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="@string/_45min"
+                android:textColor="#4A148C" />
+
+            <Button
+                android:id="@+id/btn_60min"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="@string/_60min"
+                android:textColor="#4A148C"
+                tools:ignore="VisualLintButtonSize" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_timer_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/quit_time_unset"
+            android:textColor="#1B5E20"
+            android:textSize="19sp"
+            tools:ignore="VisualLintBounds" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#D75858"
+        android:text="@string/quit"
+        android:textSize="19sp"
+        tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+</LinearLayout>

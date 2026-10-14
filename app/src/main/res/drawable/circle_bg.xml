@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <!-- 半透明白色背景，在黑色背景下清晰可见 -->
+    <solid android:color="#4DFFFFFF" />
+</shape>
